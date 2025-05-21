@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/main.css">
+    <title>Document</title>
+    <style type="text/tailwindcss"></style>
+</head>
+<body>
+
+<header class="site-header bg-white py-[23px]">
+    <div class="containers flex justify-between">
+        <h1 class="text-[24px] font-black">Where in the world?</h1>
+        <div class="flex items-center gap-[20px]">
+            <button class="flex items-center gap-[5px] p-2 cursor-pointer border-[2px] border-block rounded-md">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-suit-heart-fill" viewBox="0 0 16 16">
+                    <path d="M4 1c2.21 0 4 1.755 4 3.92C8 2.755 9.79 1 12 1s4 1.755 4 3.92c0 3.263-3.234 4.414-7.608 9.608a.513.513 0 0 1-.784 0C3.234 9.334 0 8.183 0 4.92 0 2.755 1.79 1 4 1"/>
+                  </svg>
+                        </svg>
+                        
+                    <span>liked</span>
+                </button>
+            <button class="flex items-center gap-[5px] p-2 cursor-pointer border-[2px] border-block rounded-md">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bookmark-heart" viewBox="0  0 16 16">
+                    <path fill-rule="evenodd" d="M8 4.41c1.387-1.425 4.854 1.07 0 4.277C3.146 5.48 6.613 2.986 8 4.412z"/>
+                    <path d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v13.5a.5.5 0 0 1-.777.416L8 13.101l-5.223 2.815A.5.5 0 0 1 2 15.5zm2-1a1 1 0 0 0-1 1v12.566l4.723-2.482a.5.5 0 0 1 .554 0L13 14.566V2a1 1 0 0 0-1-1z"/>
+                  </svg>
+                        </svg>
+                        
+                    <span>saved</span>
+                </button>
+            <button class="flex items-center gap-[5px] p-2 cursor-pointer border-[2px] border-block rounded-md">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M13.5532 13.815C9.66857 13.815 6.51929 10.9278 6.51929 7.36821C6.51929 6.0253 6.96679 4.78158 7.73143 3.75C4.69036 4.69515 2.5 7.33122 2.5 10.4381C2.5 14.3385 5.94929 17.5 10.2036 17.5C13.5929 17.5 16.4696 15.4932 17.5 12.7045C16.375 13.4048 15.0161 13.815 13.5532 13.815Z" fill="white" stroke="#111517" stroke-width="1.25"/>
+                    </svg>
+                    
+                <span>Dark Mode</span>
+                
+            </button>
+        </div>
+    </div>
+</header>
+  <main>
+         <section class="pt-[48px]">
+             <div class="containers flex justify-between">
+                 <input class="search-input w-[480px] py-[19px] pl-[74px] rounded-[5px] outline-none shadow-md focus:shadow-blue-500" type="text" placeholder="Search for a country…">
+                 <select  class="choose-select w-[200px] py-[19px] pl-[24px] rounded-[5px] outline-none shadow-md focus:shadow-blue-500" >
+                 <option selected disabled value="all">Filter by capital</option>
+                </select>     
+            </div>
+            <div class="containers !mt-[48px]">
+                <ul class="country-list mb-[48px] flex flex-wrap !gap-[20px]">
+
+                </ul>
+
+            </div>
+        </section>
+    </main>
+
+
+
+    <script src="/js/countries.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</body>
+</html>
