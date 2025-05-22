@@ -6,6 +6,19 @@
 .site-header{
     box-shadow: 0px 2px 4px 0px #0000000E;
 }
+
+
+:root {
+    --color-bg: white;
+    --color-text: rgba(17, 21, 23, 1);
+  }
+  
+  .dark {
+    --color-bg: black;
+    --color-text: white;
+  }
+
+  
 .search-input{
     background-image: url(../images/search-icon.svg) ;
     background-repeat: no-repeat;
