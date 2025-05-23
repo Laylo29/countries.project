@@ -38,12 +38,12 @@ function renderProducts(arr,list){
          <p class="text-[var(--color-text)]"> <span>Capital: </span> ${item.capital} </p>
          </div>
          <div class="flex px-[24px] pb-[24px] gap-[10px]">
-          <button onclick="handleLikeClick('${item.id})" class=" ${item.isLiked ? "bg-red-500 text-white border-red-500" : "border-slate-500"} text-[var(--color-text)] border-[1.5px] border-slate-500 rounded-md w-[20%] cursor-pointer   hover:border-blue-500 hover:text-blue-500 duration-300">Like</button>
-          <button onclick="handleLikeClick(${item.id})" class=" ${item.isSaved ? "bg-red-500 text-white border-red-500" : "border-slate-500"} text-[var(--color-text)] border-[1.5px] border-slate-500 rounded-md w-[20%] cursor-pointer   hover:border-blue-500 hover:text-blue-500 duration-300">Save</button>
+          <button onclick="handleLikeClick(${item.id})" class=" ${item.isLiked ? "bg-red-500 text-white border-red-500" : "border-slate-500"} text-[var(--color-text)] border-[1.5px] border-slate-500 rounded-md w-[20%] cursor-pointer   hover:border-blue-500 hover:text-blue-500 duration-300">Like</button>
+          <button onclick="handleSaveClick(${item.id})" class=" ${item.isSaved ? "bg-purple-500 text-white border-purple-500" : "border-slate-500"} text-[var(--color-text)] border-[1.5px] border-slate-500 rounded-md w-[20%] cursor-pointer   hover:border-blue-500 hover:text-blue-500 duration-300">Save</button>
           <button class=" text-[var(--color-text)] border-[1.5px] border-slate-500 rounded-md w-[20%] cursor-pointer   hover:border-blue-500 hover:text-blue-500 duration-300">More</button>
         </div>
         `
-        elCountryList.appendChild(elItem)
+        list.appendChild(elItem)
     })
 }
 renderProducts(countries, elCountryList)
@@ -84,15 +84,16 @@ elDarkModeBtn.addEventListener('click', () => {
 
 
 // like start
-function handleSaveClick(id){
+function handleLikeClick(id){
     let findObj = countries.find(item => item.id == id)
-    findObj.isSaved = !findObj.isSaved
-    renderProduct(countries, elCountryList)
-    elSaveCount.textContent = countries.filter(item => item.isSaved).length
+    findObj.isLiked = !findObj.isLiked
+    renderProducts(countries, elCountryList)
+    elLikeCount.textContent = countries.filter(item => item.isLiked).length
 }
-function handleSaveBtnClick() {
-    let saveList = countries.filter(item => item.isSaved)
-    renderProduct(saveList, elCountryList)
+
+function handleLikeBtnClick() {
+    let likeList = countries.filter(item => item.isLiked)
+    renderProducts(likeList, elCountryList)
 }
 // like end
 
@@ -100,11 +101,12 @@ function handleSaveBtnClick() {
 function handleSaveClick(id){
     let findObj = countries.find(item => item.id == id)
     findObj.isSaved = !findObj.isSaved
-    renderProduct(countries, elCountryList)
+    renderProducts(countries, elCountryList)
     elSaveCount.textContent = countries.filter(item => item.isSaved).length
 }
 function handleSaveBtnClick() {
-    let saveList = countries.filter(item => item.isSaved)
-    renderProduct(saveList, elCountryList)
+    let SaveList = countries.filter(item => item.isSaved)
+    renderProducts(SaveList, elCountryList)
 }
+
 // saved end
